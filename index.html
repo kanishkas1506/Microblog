@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostVerse</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="login-container" id="loginPage">
+    <div class="login-box">
+        <h2>PostVerse</h2>
+        <p><i>Welcome Back!</i></p>
+        <label>Username</label>
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username">
+        <label>Password</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+        <p class="signup-text">
+            Don't have an account?
+            <a href="#">Sign Up</a>
+        </p>
+    </div>
+</div>
+<div id="homePage" style="display:none;">
+    <div class="container">
+        <div class="left">
+            <nav>
+                <h1>PostVerse</h1>
+                <ul>
+                    <li onclick="home()">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </li>
+                    <li onclick="explore()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Explore
+                    </li>
+                    <li onclick="notifications()">
+                        <i class="fa-solid fa-bell"></i>
+                        Notifications
+                    </li>
+                    <li onclick="messages()">
+                        <i class="fa-solid fa-envelope"></i>
+                        Messages
+                    </li>
+                    <li onclick="profile()">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </li>
+                    <li onclick="settings()">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </li>
+                </ul>
+                <button class="post-btn" onclick="createPost()">Post</button>
+            </nav>
+        </div>
+        <div class="center">
+            <div class="profile-header">
+                <img
+                    src="c:\Users\user\Desktop\FSWD\kANISHKA.jpeg"
+                    class="profile-img"
+                    alt="Profile">
+                <button class="edit-btn">Edit Profile</button>
+            </div>
+            <div class="profile-info">
+                <h2>KANISHKA S</h2>
+                <p>@kanishka</p>
+                <p>Full Stack Web Developer</p>
+                <div class="follow">
+                    <span onclick="showFollowing()">
+                        <b id="followingCount">0</b>
+                        Following
+                    </span>
+                    <span onclick="showFollowers()">
+                        <b id="followersCount">3</b>
+                        Followers
+                    </span>
+                </div>
+            </div>
+            <div
+                id="followList"
+                class="follow-list">
+                <h3 id="followTitle"></h3>
+                <div id="peopleList"></div>
+            </div>
+            <div class="tabs">
+                <a href="#">Posts</a>
+                <a href="#">Replies</a>
+                <a href="#">Media</a>
+                <a href="#">Likes</a>
+            </div>
+            <div class="create-post">
+                <textarea id="postInput" placeholder="What's happening?"></textarea>
+                <input type="file" id="imageInput" accept="image/*">
+                <button onclick="addPost()">Post</button>
+            </div>
+            <div id="posts">
+                <div class="post">
+                    <h3>Kanishka</h3>
+                    <p>Welcome to PostVerse 🎉</p>
+                    <div class="actions">
+                        <button onclick="likePost(this)">❤️ Like</button>
+                        <button onclick="commentPost()">💬 Comment</button>
+                        <button onclick="repostPost()">🔁 Repost</button>
+                        <button onclick="sharePost()">📤 Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <input type="text" placeholder="Search">
+            <div class="card">
+                <h3>Who to Follow</h3>
+                <div class="person">
+                    <span>Dhanuu</span>
+                    <button onclick="followUser(this,'Dhanuu')">Follow</button>
+                </div>
+                <div class="person">
+                    <span>Prathi</span>
+                    <button onclick="followUser(this,'Prathi')">Follow</button>
+                </div>
+                <div class="person">
+                    <span>Kamal</span>
+                    <button onclick="followUser(this,'Kamal')">Follow</button>
+                </div>
+                <div class="person">
+                    <span>Dinu</span>
+                    <button onclick="followUser(this,'Dinu')">Follow</button>
+                </div>
+                <div class="person">
+                    <span>Subashini</span>
+                    <button onclick="followUser(this,'Subashini')">Follow</button>
+                </div>
+                <div class="person">
+                    <span>Sasii</span>
+                    <button onclick="followUser(this,'Sasii')">Follow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
